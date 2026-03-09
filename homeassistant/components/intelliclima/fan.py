@@ -74,7 +74,7 @@ class IntelliClimaVMCFan(IntelliClimaECOEntity, FanEntity):
         """Return the current speed percentage."""
         device_data = self._device_data
 
-        if device_data.speed_set == FanSpeed.auto:
+        if device_data.speed_set == FanSpeed.auto_get:
             return None
 
         return ranged_value_to_percentage(self._speed_range, int(device_data.speed_set))
